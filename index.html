@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="book-bookmark-solid.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="listStyle.css">
+    <link rel="stylesheet" href="floatingForm.css">
     <title>Library</title>
 </head>
 <body>
-    <div id="floatRegisterCard" style="/*display: none;*/" class="floatingDisplayToRegisterABook">
+    <div id="floatRegisterCard" style="display: none;" class="floatingDisplayToRegisterABook">
         <div class="floatingDisplayCard">
             <div class="floatingDisplayContent">
                 <h4>Fill the data</h4>
@@ -19,27 +21,27 @@
                 </fieldset>
                 <fieldset>
                     <legend for="authorName">Author name</legend>
-                    <input type="text" name="authorName" id="">
+                    <input type="text" name="authorName" id="authorName">
                 </fieldset>
                 <fieldset>
                     <legend for="amountOfPages">Amount of pages</legend>
-                    <input type="number" name="amountOfPages" id="">
+                    <input type="number" name="amountOfPages" id="amountOfPages">
                 </fieldset>
                 <fieldset role="radiogroup">
                     <legend>Already read?</legend>
                     <div class="radioFieldset">
                         <label for="yes" class="radioFieldsetChoice">
-                            <input type="radio" id="yes" name="read" value="yes" checked="">
+                            <input type="radio" id="readYes" name="read" value="yes" checked>
                             Yes
                         </label>
                         <label for="no" class="radioFieldsetChoice">
-                            <input type="radio" id="no" name="read" value="no">
+                            <input type="radio" id="readNo" name="read" value="no">
                             No
                         </label>
                     </div>
                 </fieldset>
                 <div class="formButton">
-                    <button>Register</button>
+                    <button onclick="register()">Register</button>
                 </div>
             </div>
         </div>
@@ -49,12 +51,12 @@
         <h4>Your Library</h4>
     </header>
     <main>
-        <ul>
-            <li>Club da Luta</li>
+        <ul id="bookList">
+            <li></li>
         </ul>
     </main>
     <main>
-        <button onclick="">Add</button>
+        <button onclick="registerNewBook()">Add</button>
     </main>
 </body>
 <script src="script.js"></script>

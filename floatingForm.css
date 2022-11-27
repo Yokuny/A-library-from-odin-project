@@ -1,0 +1,83 @@
+.floatingDisplayToRegisterABook{
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+.floatingDisplayCard{
+    position: relative;
+    width: 25%;
+    height: 60%;
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #d631ffce, #8031ffd2, #23a5d5d2, #23d5abd5, #26deebd2);
+    background-size: 400% 400%;
+    animation: change 10s ease-in-out infinite;
+    box-shadow: 7px 10px 30px -2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes change {
+    0%{
+        background-position: 0 50%;}
+    50%{
+        background-position: 100% 50%;}
+    100%{
+        background-position: 0 50%;}
+}
+.floatingDisplayContent{
+    width: 70%;
+}
+.floatingDisplayContent fieldset{
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: 8px;
+}
+.floatingDisplayContent legend{
+    font-weight: 600;
+    font-size: .8rem;
+    padding: 4px;
+}
+.floatingDisplayContent input{
+    border-radius: 8px;
+    border: transparent;
+    padding-left: 8px;
+    font-size: .8rem;
+    height: 32px;
+    border: 2px solid transparent;
+}
+.floatingDisplayContent input:active, input:focus{
+    outline: none;
+    border:  #23d5abd5 solid 2px;
+}
+.radioFieldset{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 10px;
+}
+.radioFieldsetChoice{
+    display: flex;
+    gap: 10px;
+}
+.formButton{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.formButton button{
+    font-weight: 500;
+    border-radius: 8px;
+    border: solid transparent;
+}
+.formButton button:hover{
+    border:  #23d5abd5 solid 2px;
+    border-radius: 8px;
+}

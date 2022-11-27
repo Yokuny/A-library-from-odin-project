@@ -1,0 +1,11 @@
+#bookList li{
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+#bookList li h4{
+    font-size: 0.7rem;
+}
+#bookList li p{
+    font-size: 0.6rem;
+}
