@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="book-bookmark-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div id="floatRegisterCard" style="/*display: none;*/" class="floatingDisplayToRegisterABook">
+        <div class="floatingDisplayCard">
+            <div class="floatingDisplayContent">
+                <h4>Fill the data</h4>
+                <fieldset>
+                    <legend for="bookTitle">Book title</legend>
+                    <input type="text" name="" id="bookTitle">
+                </fieldset>
+                <fieldset>
+                    <legend for="authorName">Author name</legend>
+                    <input type="text" name="authorName" id="">
+                </fieldset>
+                <fieldset>
+                    <legend for="amountOfPages">Amount of pages</legend>
+                    <input type="number" name="amountOfPages" id="">
+                </fieldset>
+                <fieldset role="radiogroup">
+                    <legend>Already read?</legend>
+                    <div class="radioFieldset">
+                        <label for="yes" class="radioFieldsetChoice">
+                            <input type="radio" id="yes" name="read" value="yes" checked="">
+                            Yes
+                        </label>
+                        <label for="no" class="radioFieldsetChoice">
+                            <input type="radio" id="no" name="read" value="no">
+                            No
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="formButton">
+                    <button>Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h4>Your Library</h4>
+    </header>
+    <main>
+        <ul>
+            <li>Club da Luta</li>
+        </ul>
+    </main>
+    <main>
+        <button onclick="">Add</button>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
