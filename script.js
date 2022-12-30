@@ -1,6 +1,7 @@
 /* book object */
-const book = (title, author, pages, read) => {
-  return { title, author, pages, read };
+const book = (title, author, pages, read, receivedId) => {
+  const id = receivedId + 11;
+  return { title, author, pages, read, id };
 };
 /* book array */
 const myLibrary = [];
@@ -19,17 +20,27 @@ registerBookForm.addEventListener("submit", (e) => {
     document.getElementById("bookTitle").value,
     document.getElementById("authorName").value,
     document.getElementById("amountOfPages").value,
-    document.getElementById("readYes").checked
+    document.getElementById("readYes").checked,
+    myLibrary.length
   );
   myLibrary.push(newBook);
   render();
   floatingForm.style = "display:none;";
+  const trashCanElement = document.getElementsByClassName("removeItem");
 });
-
+/* */
 function render() {
   const bookListElement = document.getElementById("bookList");
   bookListElement.innerHTML = " ";
   myLibrary.forEach((book) => {
+    const inputElement = document.createElement("input");
+    inputElement.type = "checkbox";
+    const iconElement = document.createElement("img");
+    iconElement.src = "./trash-bin-outline.svg";
+    iconElement.id = book.id;
+    iconElement.addEventListener("click", (theClick) => {
+      removeItem(theClick.target.id);
+    });
     const titleElement = document.createElement("h4");
     titleElement.textContent = `${book.title}`;
     const autorElement = document.createElement("p");
@@ -38,11 +49,20 @@ function render() {
     autorName.textContent = `${book.author}`;
     const pagesElement = document.createElement("p");
     pagesElement.textContent = " paginas:";
-    const pageCount = document.createElement("h4");
-    pageCount.textContent = `${book.pages}`;
+    const pagesCount = document.createElement("h4");
+    pagesCount.textContent = `${book.pages}`;
 
     const liElement = document.createElement("li");
-    liElement.append(titleElement, autorElement, autorName, pagesElement, pageCount);
+    liElement.id = book.id;
+    liElement.append(
+      inputElement,
+      iconElement,
+      titleElement,
+      autorElement,
+      autorName,
+      pagesElement,
+      pagesCount
+    );
 
     if (book.read) {
       liElement.style.borderLeft = "solid #23d5abd5 4px";
@@ -52,3 +72,11 @@ function render() {
     bookListElement.appendChild(liElement);
   });
 }
+function removeItem(id){
+  for (let i = 0; i < myLibrary.length; i++) {
+    if(myLibrary[i].id == id){
+      myLibrary.splice(i, 1);
+    }
+  }
+  render();
+};
