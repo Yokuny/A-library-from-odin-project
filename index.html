@@ -13,7 +13,7 @@
 <body>
     <div id="floatRegisterCard" style="display: none;" class="floatingDisplayToRegisterABook">
         <div class="floatingDisplayCard">
-            <div class="floatingDisplayContent">
+            <form id="registerBookForm" class="floatingDisplayContent">
                 <h4>Fill the data</h4>
                 <fieldset>
                     <legend for="bookTitle">Book title</legend>
@@ -41,9 +41,9 @@
                     </div>
                 </fieldset>
                 <div class="formButton">
-                    <button onclick="register()">Register</button>
+                    <button type="submit">Register</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
         </ul>
     </main>
     <main>
-        <button onclick="registerNewBook()">Add</button>
+        <button id="openForm">Add</button>
     </main>
 </body>
 <script src="script.js"></script>

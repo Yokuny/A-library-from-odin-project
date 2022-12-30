@@ -1,43 +1,21 @@
-const renderRegisterInterface = document.getElementById("floatRegisterCard");
-function registerNewBook() {
-  renderRegisterInterface.style = "display:flex;";
-}
-let myLibrary = [];
+/* book object */
 const book = (title, author, pages, read) => {
   return { title, author, pages, read };
 };
-function render() {
-  let bookListElement = document.getElementById("bookList");
-  bookListElement.innerHTML = " ";
-  myLibrary.forEach((book) => {
-    let newLiElement = document.createElement("li");
-    let titleElement = document.createElement("h4");
-    titleElement.textContent = `${book.title}`;
-    let autorDisplaceElement = document.createElement("p");
-    autorDisplaceElement.textContent = " Autor:";
-    let autorElement = document.createElement("h4");
-    autorElement.textContent = `${book.author}`;
-    let pagesDisplaceElement = document.createElement("p");
-    pagesDisplaceElement.textContent = " paginas:";
-    let pageCountElement = document.createElement("h4");
-    pageCountElement.textContent = `${book.pages}`;
-    newLiElement.append(
-      titleElement,
-      autorDisplaceElement,
-      autorElement,
-      pagesDisplaceElement,
-      pageCountElement
-    );
-    if (book.read) {
-      newLiElement.style.borderLeft = "solid #23d5abd5 4px";
-    } else {
-      newLiElement.style.borderLeft = "solid #d631ffce 4px";
-    }
-    bookListElement.appendChild(newLiElement);
-  });
-}
-function register() {
-  let newBook = book(
+/* book array */
+const myLibrary = [];
+
+const floatingForm = document.getElementById("floatRegisterCard");
+const openForm = document.getElementById("openForm");
+const registerBookForm = document.getElementById("registerBookForm");
+/* events to listen */
+openForm.addEventListener("click", () => {
+  floatingForm.style = "display:flex;";
+});
+
+registerBookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newBook = book(
     document.getElementById("bookTitle").value,
     document.getElementById("authorName").value,
     document.getElementById("amountOfPages").value,
@@ -45,5 +23,32 @@ function register() {
   );
   myLibrary.push(newBook);
   render();
-  renderRegisterInterface.style = "display:none;";
+  floatingForm.style = "display:none;";
+});
+
+function render() {
+  const bookListElement = document.getElementById("bookList");
+  bookListElement.innerHTML = " ";
+  myLibrary.forEach((book) => {
+    const titleElement = document.createElement("h4");
+    titleElement.textContent = `${book.title}`;
+    const autorElement = document.createElement("p");
+    autorElement.textContent = " Autor:";
+    const autorName = document.createElement("h4");
+    autorName.textContent = `${book.author}`;
+    const pagesElement = document.createElement("p");
+    pagesElement.textContent = " paginas:";
+    const pageCount = document.createElement("h4");
+    pageCount.textContent = `${book.pages}`;
+
+    const liElement = document.createElement("li");
+    liElement.append(titleElement, autorElement, autorName, pagesElement, pageCount);
+
+    if (book.read) {
+      liElement.style.borderLeft = "solid #23d5abd5 4px";
+    } else {
+      liElement.style.borderLeft = "solid #d631ffce 4px";
+    }
+    bookListElement.appendChild(liElement);
+  });
 }

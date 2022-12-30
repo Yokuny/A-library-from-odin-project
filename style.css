@@ -7,8 +7,6 @@
     padding: 0px;
 }
 body{
-    width: 100vw;
-    height: 100vh;
     background-color: black;
     background-image: url(./animatedBackGround.svg);
     background-repeat: no-repeat;
@@ -43,8 +41,8 @@ li{
     margin: 5px;
 }
 button{
-    height: 4vh;
+    height: max(4vh, 30px);
     font-size: 0.8rem;
     font-weight: 600;
-    width: 10vh;
+    width: 20vh;
 }
