@@ -3,9 +3,8 @@ const book = (title, author, pages, read, receivedId) => {
   const id = receivedId + 11;
   return { title, author, pages, read, id };
 };
-/* book array */
 const myLibrary = [];
-
+/* book array */
 const floatingForm = document.getElementById("floatRegisterCard");
 const openForm = document.getElementById("openForm");
 const registerBookForm = document.getElementById("registerBookForm");
@@ -13,7 +12,6 @@ const registerBookForm = document.getElementById("registerBookForm");
 openForm.addEventListener("click", () => {
   floatingForm.style = "display:flex;";
 });
-
 registerBookForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const newBook = book(
@@ -26,7 +24,6 @@ registerBookForm.addEventListener("submit", (e) => {
   myLibrary.push(newBook);
   render();
   floatingForm.style = "display:none;";
-  const trashCanElement = document.getElementsByClassName("removeItem");
 });
 /* */
 function render() {
@@ -72,6 +69,7 @@ function render() {
     bookListElement.appendChild(liElement);
   });
 }
+/* */
 function removeItem(id){
   for (let i = 0; i < myLibrary.length; i++) {
     if(myLibrary[i].id == id){
