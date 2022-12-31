@@ -32,6 +32,15 @@ function render() {
   myLibrary.forEach((book) => {
     const inputElement = document.createElement("input");
     inputElement.type = "checkbox";
+    if (book.read) {
+      inputElement.checked = true;
+    } else {
+      inputElement.checked = false;
+    }
+    inputElement.id = book.id;
+    inputElement.addEventListener("click", (theClick) => {
+      readed(theClick);
+    });
     const iconElement = document.createElement("img");
     iconElement.src = "./trash-bin-outline.svg";
     iconElement.id = book.id;
@@ -70,6 +79,14 @@ function render() {
   });
 }
 /* */
+function readed(id) {
+  const liToChange = document.getElementById(id.target.id);
+  if (id.explicitOriginalTarget.checked) {
+    liToChange.style.borderLeft = "solid #23d5abd5 4px";
+  } else {
+    liToChange.style.borderLeft = "solid #d631ffce 4px";
+  }
+}
 function removeItem(id){
   for (let i = 0; i < myLibrary.length; i++) {
     if(myLibrary[i].id == id){
