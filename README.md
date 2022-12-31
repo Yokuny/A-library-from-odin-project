@@ -2,7 +2,7 @@
 https://yokuny.github.io/A-library-from-odin-project/
 
 # Este projeto é sobre
-## > Validação de formularios no client-side com HTML e CSS e com JavaScript no back-end
+### > Validação de formularios no client-side com HTML e CSS e com JavaScript no back-end
 
 > **Formulários são a parte principal de vários sites**. **Quase todos os sites têm formulários** **de inscrição, formulários de contato, formulários de pesquisa**.
 > 
@@ -16,9 +16,9 @@ https://yokuny.github.io/A-library-from-odin-project/
 > Ainda assim **deve ser feito uma verificação de dados no `back-end`**, **porque é fácil burlar a validação do lado do usuário** e muitos podem enviar péssimos dados.
 > 
 
-### Há duas formas de validação
+## Há duas formas de validação
 
-## Atributos de validação nos elementos do formulário
+### Atributos de validação nos elementos do formulário
 
 - `required`: Especifica que o elemento obrigatoriamente deve ser preenchido.
 - `minlength` & `maxlength`: Especifica o mínimo e o máximo do **`texto` `(string)`**
@@ -29,3 +29,6 @@ https://yokuny.github.io/A-library-from-odin-project/
 > Se a validação ocorrer a pseudoclasse de CSS é atribuída `:valid` ao elemento
 
 > Quando um elemento fica invalido > entra no atributo `:invalid` ou/e `:out-of-range`
+
+> Que devem ser personalizados para que o usuario entenda oque deve ser feito
+>

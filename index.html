@@ -17,15 +17,15 @@
                 <h4>Fill the data</h4>
                 <fieldset>
                     <legend for="bookTitle">Book title</legend>
-                    <input type="text" name="" id="bookTitle">
+                    <input type="text" name="" id="bookTitle" required maxlength="50" minlength="2">
                 </fieldset>
                 <fieldset>
                     <legend for="authorName">Author name</legend>
-                    <input type="text" name="authorName" id="authorName">
+                    <input type="text" name="authorName" id="authorName" required maxlength="30" minlength="6">
                 </fieldset>
                 <fieldset>
                     <legend for="amountOfPages">Amount of pages</legend>
-                    <input type="number" name="amountOfPages" id="amountOfPages">
+                    <input type="number" name="amountOfPages" id="amountOfPages" required max="9999" min="10">
                 </fieldset>
                 <fieldset role="radiogroup">
                     <legend>Already read?</legend>
