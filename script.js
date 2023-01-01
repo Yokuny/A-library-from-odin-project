@@ -95,3 +95,15 @@ function removeItem(id){
   }
   render();
 };
+/* validation */
+    
+
+const bookTitleEvent = document.getElementById("bookTitle");
+let abe = document.getElementById("authorName");
+document.getElementById("amountOfPages");
+document.getElementById("readYes");
+
+bookTitleEvent.addEventListener('input', (event) => {
+  console.log(bookTitleEvent.validity);
+
+})

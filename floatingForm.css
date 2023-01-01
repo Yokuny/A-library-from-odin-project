@@ -47,11 +47,17 @@
 }
 .floatingDisplayContent input{
     border-radius: 8px;
-    border: transparent;
     padding-left: 8px;
     font-size: .8rem;
     height: 32px;
     border: 2px solid transparent;
+}
+input:valid{
+    border:  #51ff00d5 solid 2px;
+}
+input:invalid{
+    border: solid 2px transparent;
+    outline: solid .4px crimson;
 }
 .floatingDisplayContent input:active, input:focus{
     outline: none;
