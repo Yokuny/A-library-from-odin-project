@@ -30,7 +30,7 @@ https://yokuny.github.io/A-library-from-odin-project/
 
 > Quando um elemento fica invalido > entra no atributo `:invalid` ou/e `:out-of-range`
 
-> > Que devem ser personalizados para que o usuario entenda oque deve ser feito
+> Que devem ser personalizados para que o usuario entenda oque deve ser feito
 >
 
 
@@ -43,7 +43,7 @@ https://yokuny.github.io/A-library-from-odin-project/
 ### `.validity` retorna um `object` que contem vários propriedades descrevendo todas as validades de um elemento. O `object` pode ser filtrado filtrado seguindo a ramificação do `object` com tais **`keys`** principais.
 
 ```jsx
-**if**(**nameElement**.validity.typeMismatch)
+**if(nameElement.validity.typeMismatch)
 ```
 
 - `**.patternMismatch**` retorna `**true**` caso as informações não cumpra o `pattern` e `**false**` se atender o `pattern`.
@@ -56,7 +56,7 @@ https://yokuny.github.io/A-library-from-odin-project/
 - `**.valueMissing`** retorna `true` caso no elemento tenha atributo **`required`** e não foi preenchido
 
 ```jsx
-**document.getElementById(**"userName"**)**.checkValidity**();**
+**document.getElementById("userName").checkValidity();
 ```
 
 - `.setCustomValidity(" ")` permite atribuir uma mensagem personalizada ao usuário
