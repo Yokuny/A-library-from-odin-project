@@ -31,8 +31,9 @@ https://yokuny.github.io/A-library-from-odin-project/
 > Quando um elemento fica invalido > entra no atributo `:invalid` ou/e `:out-of-range`
 
 > Que devem ser personalizados para que o usuario entenda oque deve ser feito
->
 
+
+><hr>
 
 
 ### Validação de formulário com JS
@@ -43,20 +44,20 @@ https://yokuny.github.io/A-library-from-odin-project/
 ### `.validity` retorna um `object` que contem vários propriedades descrevendo todas as validades de um elemento. O `object` pode ser filtrado filtrado seguindo a ramificação do `object` com tais **`keys`** principais.
 
 ```jsx
-**if(nameElement.validity.typeMismatch)
+if(nameElement.validity.typeMismatch)
 ```
 
-- `**.patternMismatch**` retorna `**true**` caso as informações não cumpra o `pattern` e `**false**` se atender o `pattern`.
-- `**.tooLong**` retorna **`true`** se o valor for maior que o especificado por **`maxlength`**
-- `**.tooShort**` retorna `**true`** caso receba no `**input` `string`** menor que a requisitado por `**minlength**`
-- `**.rangeOverflow`** retorna **`true`** se receber valor numero maior que o de **`max`**
-- `**.rangeUnderflow`** funciona ao contrario de **`.rangeOverflow`**
-- **`.typeMismatch`** retorna `**true`** quando não esta conforme a sintaxe (quando o tipo é **`email`** ou **`url`**)
-- `.valid` retorna **`true`** se atender todas as restrições
-- `**.valueMissing`** retorna `true` caso no elemento tenha atributo **`required`** e não foi preenchido
+- `.patternMismatch` retorna `true` caso as informações não cumpra o `pattern` e `false` se atender o `pattern`.
+- `.tooLong` retorna `true` se o valor for maior que o especificado por `maxlength`
+- `.tooShort` retorna `true` caso receba no `input` `string` menor que a requisitado por `minlength`
+- `.rangeOverflow` retorna `true` se receber valor numero maior que o de `max`
+- `.rangeUnderflow` funciona ao contrario de `.rangeOverflow`
+- `.typeMismatch` retorna `true` quando não esta conforme a sintaxe (quando o tipo é `email` ou `url`)
+- `.valid` retorna `true` se atender todas as restrições
+- `.valueMissing` retorna `true` caso no elemento tenha atributo `required` e não foi preenchido
 
 ```jsx
-**document.getElementById("userName").checkValidity();
+document.getElementById("userName").checkValidity();
 ```
 
 - `.setCustomValidity(" ")` permite atribuir uma mensagem personalizada ao usuário
