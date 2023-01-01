@@ -97,13 +97,67 @@ function removeItem(id){
 };
 /* validation */
     
+const registerFormEvent = document.getElementById("registerBookForm");
 
 const bookTitleEvent = document.getElementById("bookTitle");
-let abe = document.getElementById("authorName");
-document.getElementById("amountOfPages");
-document.getElementById("readYes");
+const bookTitleError = document.getElementById("bookTitleError");
 
-bookTitleEvent.addEventListener('input', (event) => {
-  console.log(bookTitleEvent.validity);
+const authorNameEvent = document.getElementById("authorName");
+const authorNameError = document.getElementById("authorNameError");
 
-})
+const pageAmountEvent = document.getElementById("amountOfPages");
+const amountOfPagesError = document.getElementById("amountOfPagesError");
+
+bookTitleEvent.addEventListener("input", () => {
+  let errorMsg;
+  if (bookTitleEvent.validity.tooShort) {
+    errorMsg = "O titulo é muito curto";
+    bookTitleEvent.setCustomValidity("The title is too short");
+  } else if (bookTitleEvent.validity.tooLong) {
+    errorMsg = "O titulo é muito extenso";
+    bookTitleEvent.setCustomValidity("The title is too long");
+  } else {
+    errorMsg = "Salvo!";
+    bookTitleEvent.setCustomValidity("");
+  }
+  bookTitleError.textContent = errorMsg;
+});
+
+authorNameEvent.addEventListener("input", () => {
+  let errorMsg;
+  if (authorNameEvent.validity.tooShort) {
+    errorMsg = "O nome do autor é muito pequeno";
+    authorNameEvent.setCustomValidity("Author name is too short");
+  } else if (authorNameEvent.validity.tooLong) {
+    errorMsg = "O nome do autor é muito extenso";
+    authorNameEvent.setCustomValidity("Author name is too long");
+  } else {
+    errorMsg = "Salvo!";
+    authorNameEvent.setCustomValidity("");
+  }
+  authorNameError.textContent = errorMsg;
+});
+
+pageAmountEvent.addEventListener("input", () => {
+  let errorMsg;
+
+  if (pageAmountEvent.validity.rangeUnderflow) {
+    errorMsg = "A quantidade de paginas insulficiente";
+    pageAmountEvent.setCustomValidity("The page amount is to short");
+  } else if (pageAmountEvent.validity.rangeOverflow) {
+    errorMsg = "A quantidade de paginas esta muito alta";
+    pageAmountEvent.setCustomValidity("The page amount is to long");
+  } else {
+    errorMsg = "Salvo!";
+    pageAmountEvent.setCustomValidity("");
+  }
+  if (isNaN(parseInt(pageAmountEvent.value))) {
+    errorMsg = "Informação invalida";
+  }
+  amountOfPagesError.textContent = errorMsg;
+});
+
+registerFormEvent.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("submit");
+});

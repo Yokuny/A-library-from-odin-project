@@ -13,7 +13,7 @@ https://yokuny.github.io/A-library-from-odin-project/
 > **A validação do lado do cliente é uma verificação inicial** e um recurso para boa experiência do usuário; **Se os dados forem enviados para o server para serem verificados, tomara muito tempo**.
 > 
 
-> Ainda assim **deve ser feito uma verificação de dados no `back-end`**, **porque é fácil burlar a validação do lado do usuário** e muitos podem enviar péssimos dados.
+> Ainda assim **deve ser feito uma verificação de dados no `back-end`, porque é fácil burlar a validação do lado do usuário** e muitos podem enviar péssimos dados.
 > 
 
 ## Há duas formas de validação
@@ -21,8 +21,8 @@ https://yokuny.github.io/A-library-from-odin-project/
 ### Atributos de validação nos elementos do formulário
 
 - `required`: Especifica que o elemento obrigatoriamente deve ser preenchido.  Um elemento com required tem a subclasse de CSS `:required` para personalizar todos os elementos que são obrigatorios.
-- `minlength` & `maxlength`: Especifica o mínimo e o máximo do **`texto` `(string)`**
-- `min` &`max`: o valor mínimo e máximo numérico.
+- `minlength` & `maxlength`: Especifica o mínimo e o máximo do `texto` `(string)`
+- `min` & `max`: o valor mínimo e máximo numérico.
 - `type`: Dita um preset para data. Sendo > números, e-mail …
 - `pattern`: Especifica uma > [**expressão regular**](https://www.notion.so/Sobre-programa-o-3da2bd8b16df4ca1915b8ef73e9acd82) < que deve ser seguida.
 
@@ -33,7 +33,8 @@ https://yokuny.github.io/A-library-from-odin-project/
 > Que devem ser personalizados para que o usuario entenda oque deve ser feito
 
 
-><hr>
+<hr>
+<hr>
 
 
 ### Validação de formulário com JS
@@ -41,7 +42,7 @@ https://yokuny.github.io/A-library-from-odin-project/
 > aplicável aos elementos do DOM
 > 
 
-### `.validity` retorna um `object` que contem vários propriedades descrevendo todas as validades de um elemento. O `object` pode ser filtrado filtrado seguindo a ramificação do `object` com tais **`keys`** principais.
+### `.validity` retorna um `object` que contem vários propriedades descrevendo todas as validades de um elemento. O `object` pode ser filtrado filtrado seguindo a ramificação do `object` com tais `keys` principais.
 
 ```jsx
 if(nameElement.validity.typeMismatch)
